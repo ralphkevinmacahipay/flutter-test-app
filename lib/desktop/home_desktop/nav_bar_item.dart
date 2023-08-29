@@ -86,11 +86,15 @@ class NavBar extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: SizedBox(
               height: 30,
-              width: 194,
+              width: context.percentWidth * 13.48,
               child: TextField(
                 textAlign: TextAlign.left,
-                style: kInterRegurlar.copyWith(color: kBlack),
+                style: kInterRegurlar.copyWith(
+                  color: kBlack,
+                ),
                 decoration: InputDecoration(
+                  helperStyle: kInterSemiBold.copyWith(
+                      color: kGrey, fontSize: context.percentWidth * 1),
                   contentPadding: EdgeInsets.zero,
                   hintText: 'Search',
                   fillColor: kGrey,
@@ -102,7 +106,44 @@ class NavBar extends StatelessWidget {
                 ),
               ).cornerRadius(30),
             ),
-          ),
+          ).marginOnly(right: context.percentWidth * 13),
+          Align(
+            alignment: Alignment.centerRight,
+            child: SizedBox(
+              height: context.percentWidth * 2,
+              width: context.percentWidth * 2,
+              child: Stack(children: [
+                InkWell(
+                    onTap: () {
+                      print("test");
+                    },
+                    child: Image.asset(kChartIcon)),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: CircleAvatar(
+                    backgroundColor: kLogoBackColor,
+                    radius: context.percentWidth * .5,
+                    child: FittedBox(
+                        child: Text(
+                      "0",
+                      style: kInterMediumBold.copyWith(
+                          color: kBlack.withOpacity(.47)),
+                    )),
+                  ),
+                )
+              ]),
+            ),
+          ).marginOnly(right: context.percentWidth * 7.15),
+          Align(
+            alignment: Alignment.centerRight,
+            child: SizedBox(
+              height: context.percentWidth * 2,
+              width: context.percentWidth * 2,
+              child: InkWell(
+                  onTap: () => kUiStateInstance.favFunction(),
+                  child: Image.asset(kFavIcon)),
+            ),
+          ).marginOnly(right: context.percentWidth * 4),
         ],
       ),
     );
