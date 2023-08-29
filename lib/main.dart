@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/desktop/home_desktop/home_desktop.dart';
 import 'package:flutter_test_app/mobile/mobile.dart';
+import 'package:flutter_test_app/state_management/get.dart';
 import 'package:flutter_test_app/tablet/tablet.dart';
+import 'package:get/get.dart';
 
 void main() {
+  Get.put(UiStateController());
   runApp(const MyApp());
 }
 
