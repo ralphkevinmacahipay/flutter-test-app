@@ -17,13 +17,9 @@ class DesktopScreen extends StatelessWidget {
         children: [
           SizedBox(
             child: ListView(
+              controller: kUiStateInstance.kListScrollController,
               children: [
                 const HomeScreenWidget(),
-                Container(
-                  color: kLignRed,
-                  height: context.percentHeight * 100,
-                  width: context.percentWidth * 100,
-                ),
                 Container(
                   color: kGrey,
                   height: context.height,

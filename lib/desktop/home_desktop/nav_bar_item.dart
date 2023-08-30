@@ -49,12 +49,13 @@ class NavBar extends StatelessWidget {
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "HOME",
-                      kOnPress: kUiStateInstance.homeFuntion,
+                      kOnPress: () => kUiStateInstance.homeFuntion(context), //
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "NEW ARRIVAL",
-                      kOnPress: kUiStateInstance.newArrivalFunction,
+                      kOnPress: () =>
+                          kUiStateInstance.newArrivalFunction(context),
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
@@ -140,7 +141,7 @@ class NavBar extends StatelessWidget {
               height: context.percentWidth * 2,
               width: context.percentWidth * 2,
               child: InkWell(
-                  onTap: () => kUiStateInstance.favFunction(context),
+                  onTap: () => kUiStateInstance.favFunction(),
                   child: Image.asset(kFavIcon)),
             ),
           ).marginOnly(right: context.percentWidth * 4),
