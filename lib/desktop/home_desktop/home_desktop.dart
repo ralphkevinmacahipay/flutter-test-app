@@ -107,24 +107,13 @@ class HomeScreenWidget extends StatelessWidget {
                       height: context.percentHeight * 56.078125,
                     ),
                   ).marginOnly(left: context.percentWidth * 22),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: SizedBox(
-                      height: context.percentHeight * 5.57,
-                      width: context.percentWidth * 15.14,
-                      child: ElevatedButton(
-                          style:
-                              ElevatedButton.styleFrom(backgroundColor: kWhite),
-                          onPressed: () {},
-                          child: FittedBox(
-                            child: Text(
-                              "SHOP",
-                              style: kInterMediumBold.copyWith(
-                                  fontSize: 24, color: kBlack),
-                            ),
-                          )).cornerRadius(30),
-                    ),
-                  )
+                  ElevatedWidgetButton(
+                      kName: "SHOP",
+                      kAlignment: Alignment.bottomCenter,
+                      kFontSize: 24,
+                      kH: context.percentHeight * 5.57,
+                      kW: context.percentWidth * 15.14,
+                      kColor: kWhite),
                 ],
               ),
             ),
