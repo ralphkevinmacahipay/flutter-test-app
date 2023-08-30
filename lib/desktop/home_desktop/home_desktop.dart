@@ -15,79 +15,124 @@ class DesktopScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage(kBackGroundImage),
-              ),
-            ),
-            child: Stack(
+          SizedBox(
+            child: ListView(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    const HelpJoinUsSignInWidget()
-                        .marginOnly(right: context.percentWidth * 2),
-                    const NavBar(),
-                  ],
+                const HomeScreenWidget(),
+                Container(
+                  color: kLignRed,
+                  height: context.percentHeight * 100,
+                  width: context.percentWidth * 100,
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    width: double.infinity,
-                    height: context.percentHeight * 74,
-                    child: Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topLeft,
-                          child: Image.asset(
-                            kHoodyJacketImage,
-                            width: context.percentWidth * 24.46,
-                            height: context.percentHeight * 50.19,
-                          ),
-                        ).marginOnly(top: context.percentHeight * 8),
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Image.asset(
-                            kJacketImage,
-                            width: context.percentWidth * 50,
-                            height: context.percentHeight * 51.93,
-                          ),
-                        ).marginOnly(top: context.percentHeight * 7),
-                        Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Image.asset(
-                            kHoodyPerson,
-                            width: context.percentWidth * 30,
-                            height: context.percentHeight * 56.078125,
-                          ),
-                        ).marginOnly(left: context.percentWidth * 22),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: SizedBox(
-                            height: context.percentHeight * 5.57,
-                            width: context.percentWidth * 15.14,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: kWhite),
-                                onPressed: () {},
-                                child: FittedBox(
-                                  child: Text(
-                                    "SHOP",
-                                    style: kInterMediumBold.copyWith(
-                                        fontSize: 24, color: kBlack),
-                                  ),
-                                )).cornerRadius(30),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                )
+                Container(
+                  color: kGrey,
+                  height: context.height,
+                  width: context.width,
+                  child: const Center(child: Text("Products")),
+                ),
+                Container(
+                  color: kLignRed,
+                  height: context.height,
+                  width: context.width,
+                  child: const Center(child: Text("Sale")),
+                ),
+                Container(
+                  color: kLigthBrown,
+                  height: context.height,
+                  width: context.width,
+                  child: const Center(child: Text("Contacts")),
+                ),
               ],
             ),
           ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const HelpJoinUsSignInWidget()
+                    .marginOnly(right: context.percentWidth * 2),
+                const NavBar(),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class HomeScreenWidget extends StatelessWidget {
+  const HomeScreenWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: context.height,
+      width: context.width,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          fit: BoxFit.fill,
+          image: AssetImage(kBackGroundImage),
+        ),
+      ),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: SizedBox(
+              width: double.infinity,
+              height: context.percentHeight * 74,
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Image.asset(
+                      kHoodyJacketImage,
+                      width: context.percentWidth * 24.46,
+                      height: context.percentHeight * 50.19,
+                    ),
+                  ).marginOnly(top: context.percentHeight * 8),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Image.asset(
+                      kJacketImage,
+                      width: context.percentWidth * 50,
+                      height: context.percentHeight * 51.93,
+                    ),
+                  ).marginOnly(top: context.percentHeight * 7),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Image.asset(
+                      kHoodyPerson,
+                      width: context.percentWidth * 30,
+                      height: context.percentHeight * 56.078125,
+                    ),
+                  ).marginOnly(left: context.percentWidth * 22),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      height: context.percentHeight * 5.57,
+                      width: context.percentWidth * 15.14,
+                      child: ElevatedButton(
+                          style:
+                              ElevatedButton.styleFrom(backgroundColor: kWhite),
+                          onPressed: () {},
+                          child: FittedBox(
+                            child: Text(
+                              "SHOP",
+                              style: kInterMediumBold.copyWith(
+                                  fontSize: 24, color: kBlack),
+                            ),
+                          )).cornerRadius(30),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ).marginOnly(top: context.percentHeight * 10)
         ],
       ),
     );
