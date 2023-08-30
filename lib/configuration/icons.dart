@@ -5,3 +5,5 @@ String kFavIcon = "assets/favorite_icon.png";
 String kHoodyJacketImage = "assets/hoddy_jacket.png";
 String kJacketImage = "jacket_image.png";
 String kHoodyPerson = "hoody_person.png";
+String kBackGroundMobile = "background_mobile.png";
+String kMenuBar = "assets/menu_bar.png";
