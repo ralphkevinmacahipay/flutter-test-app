@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 
 import 'package:flutter_test_app/configuration/style.dart';
+import 'package:get/get.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
@@ -25,16 +26,57 @@ class MobileNavBar extends StatelessWidget {
       width: context.percentWidth * 100,
       child: Stack(
         children: [
+          const Row(
+            children: [],
+          ),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Stack(
+                  children: [
+                    IconButton(
+                        onPressed: () {},
+                        icon: Image.asset(
+                          kChartIcon,
+                          fit: BoxFit.contain,
+                        )).p(context.percentWidth * 1),
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: CircleAvatar(
+                              radius: context.percentWidth * 2.2,
+                              backgroundColor: kLogoBackColor,
+                              child: FittedBox(
+                                child: Text(
+                                  "0",
+                                  style:
+                                      kInterMediumBold.copyWith(color: kBlack),
+                                ),
+                              ))
+                          .paddingOnly(
+                              left: context.percentWidth * 8,
+                              bottom: context.percentHeight * 1),
+                    ),
+                  ],
+                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: Image.asset(
+                      kFavIcon,
+                      fit: BoxFit.contain,
+                    )).p(context.percentWidth * 1),
+              ],
+            ),
+          ),
           Align(
             alignment: Alignment.centerLeft,
-            child: SizedBox(
-              child: IconButton(
-                  onPressed: () {},
-                  icon: Image.asset(
-                    kMenuBar,
-                    fit: BoxFit.contain,
-                  )).p(context.percentWidth * 1),
-            ),
+            child: IconButton(
+                onPressed: () {},
+                icon: Image.asset(
+                  kMenuBar,
+                  fit: BoxFit.contain,
+                )).p(context.percentWidth * 1),
           ),
           Align(
             alignment: Alignment.center,

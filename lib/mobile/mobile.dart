@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
-
-import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/mobile/nav_mobile/mobile_nav.dart';
 import 'package:get/get.dart';
 
