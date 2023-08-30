@@ -140,7 +140,7 @@ class NavBar extends StatelessWidget {
               height: context.percentWidth * 2,
               width: context.percentWidth * 2,
               child: InkWell(
-                  onTap: () => kUiStateInstance.favFunction(),
+                  onTap: () => kUiStateInstance.favFunction(context),
                   child: Image.asset(kFavIcon)),
             ),
           ).marginOnly(right: context.percentWidth * 4),

@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class UiStateController extends GetxController {
   static UiStateController get instance => Get.find();
@@ -13,5 +15,8 @@ class UiStateController extends GetxController {
   void menFunction() {}
   void womenFunction() {}
   void chartFunction() {}
-  void favFunction() {}
+  void favFunction(BuildContext context) {
+    print(
+        "percentHeight : ${context.percentHeight * 100} percentWidth: ${context.percentWidth * 100}");
+  }
 }

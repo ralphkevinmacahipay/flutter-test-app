@@ -13,52 +13,121 @@ class DesktopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(kBackGroundImage),
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage(kBackGroundImage),
+              ),
             ),
-          ),
-          child: Stack(children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+            child: Stack(
               children: [
-                SizedBox(
-                  width: context.percentWidth * 15.41,
-                  child: FittedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    const HelpJoinUsSignInWidget()
+                        .marginOnly(right: context.percentWidth * 2),
+                    const NavBar(),
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                    width: double.infinity,
+                    height: context.percentHeight * 74,
+                    child: Stack(
                       children: [
-                        MyWidgetTextButton(
-                          kStyle: kInterRegurlar,
-                          kTitle: "Help",
-                          kOnPress: kUiStateInstance.helpFunction,
-                        ),
-                        const DividerNav(),
-                        MyWidgetTextButton(
-                          kStyle: kInterRegurlar,
-                          kTitle: "Join Us",
-                          kOnPress: kUiStateInstance.joinUsFunction,
-                        ),
-                        const DividerNav(),
-                        MyWidgetTextButton(
-                          kStyle: kInterRegurlar,
-                          kTitle: "Sign In",
-                          kOnPress: kUiStateInstance.signInFunction,
-                        ),
-                        const DividerNav(),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Image.asset(
+                            kHoodyJacketImage,
+                            width: context.percentWidth * 24.46,
+                            height: context.percentHeight * 50.19,
+                          ),
+                        ).marginOnly(top: context.percentHeight * 8),
+                        Align(
+                          alignment: Alignment.topRight,
+                          child: Image.asset(
+                            kJacketImage,
+                            width: context.percentWidth * 50,
+                            height: context.percentHeight * 51.93,
+                          ),
+                        ).marginOnly(top: context.percentHeight * 7),
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: Image.asset(
+                            kHoodyPerson,
+                            width: context.percentWidth * 30,
+                            height: context.percentHeight * 56.078125,
+                          ),
+                        ).marginOnly(left: context.percentWidth * 22),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: SizedBox(
+                            height: context.percentHeight * 5.57,
+                            width: context.percentWidth * 15.14,
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: kWhite),
+                                onPressed: () {},
+                                child: FittedBox(
+                                  child: Text(
+                                    "SHOP",
+                                    style: kInterMediumBold.copyWith(
+                                        fontSize: 24, color: kBlack),
+                                  ),
+                                )).cornerRadius(30),
+                          ),
+                        )
                       ],
                     ),
                   ),
-                ).marginOnly(right: context.percentWidth * 2),
-                const NavBar()
+                )
               ],
-            )
-          ]),
-        )
-      ]),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class HelpJoinUsSignInWidget extends StatelessWidget {
+  const HelpJoinUsSignInWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: context.percentWidth * 15.41,
+      child: FittedBox(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            MyWidgetTextButton(
+              kStyle: kInterRegurlar,
+              kTitle: "Help",
+              kOnPress: kUiStateInstance.helpFunction,
+            ),
+            const DividerNav(),
+            MyWidgetTextButton(
+              kStyle: kInterRegurlar,
+              kTitle: "Join Us",
+              kOnPress: kUiStateInstance.joinUsFunction,
+            ),
+            const DividerNav(),
+            MyWidgetTextButton(
+              kStyle: kInterRegurlar,
+              kTitle: "Sign In",
+              kOnPress: kUiStateInstance.signInFunction,
+            ),
+            const DividerNav(),
+          ],
+        ),
+      ),
     );
   }
 }
