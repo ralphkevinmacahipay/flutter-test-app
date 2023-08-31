@@ -7,6 +7,7 @@ import 'package:flutter_test_app/state_management/state_instance.dart';
 import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Get.put(UiStateController());
   runApp(const MyApp());
 }

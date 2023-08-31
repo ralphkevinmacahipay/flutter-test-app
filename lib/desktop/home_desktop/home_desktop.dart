@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/configuration/constant_var.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/desktop/home_desktop/nav_bar_item.dart';
+import 'package:flutter_test_app/desktop/products/products.dart';
+import 'package:flutter_test_app/desktop/sale/sale.dart';
 import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:flutter_test_app/state_management/state_instance.dart';
 import 'package:get/get.dart';
@@ -20,67 +21,9 @@ class DesktopScreen extends StatelessWidget {
             child: ListView(
               controller: kUiStateInstance.kListScrollController,
               children: [
-                const HomeScreenWidget(),
-                Container(
-                    color: kBackGroundColor,
-                    height: context.height,
-                    width: double.infinity,
-                    child: Stack(
-                      children: [
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: SizedBox(
-                            width: double.infinity,
-                            height: context.percentHeight * 58.59,
-                            child: Stack(children: [
-                              Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Image.asset(
-                                    kSampleJacket,
-                                    width: context.percentWidth * 28.43,
-                                    height: context.percentHeight * 58.59,
-                                  )),
-                              Align(
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    width: context.percentWidth * 28.43,
-                                    height: context.percentHeight * 58.59,
-                                    kSamplePerson,
-                                  )),
-                              Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Image.asset(
-                                    width: context.percentWidth * 28.43,
-                                    height: context.percentHeight * 58.59,
-                                    kSampleJacket,
-                                  )),
-                            ]),
-                          ),
-                        )
-                            .marginOnly(top: context.percentHeight * 15)
-                            .paddingSymmetric(
-                                horizontal: context.percentWidth * 4.58),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            kLorem,
-                            style: kInterMediumBold.copyWith(),
-                            textAlign: TextAlign.center,
-                          ),
-                        )
-                            .marginSymmetric(
-                                horizontal: context.percentWidth * 20.52)
-                            .marginOnly(bottom: context.percentHeight * 7.51)
-                        // .paddingSymmetric(
-                        //     vertical: context.percentHeight * 5)
-                      ],
-                    )),
-                Container(
-                  color: kLignRed,
-                  height: context.height,
-                  width: context.width,
-                  child: const Text('Sale'),
-                ),
+                const HomeDesktopScreen(),
+                const ProductDesktopScreen(),
+                const SalesDesktopScreen(),
                 Container(
                   color: kLigthBrown,
                   height: context.height,
@@ -110,8 +53,8 @@ class DesktopScreen extends StatelessWidget {
   }
 }
 
-class HomeScreenWidget extends StatelessWidget {
-  const HomeScreenWidget({
+class HomeDesktopScreen extends StatelessWidget {
+  const HomeDesktopScreen({
     super.key,
   });
 

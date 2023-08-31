@@ -1,0 +1,14 @@
+[
+  {
+    "image": "assets/sample_jacket.png",
+    "button_title": "Sweatshirts"
+  },
+  {
+    "image": "assets/sample_jacket_person.png",
+    "button_title": "Hoodies"
+  },
+  {
+    "image": "assets/sample_jacket.png",
+    "button_title": "Pair"
+  }
+]
