@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/desktop/home_desktop/home_desktop.dart';
+import 'package:flutter_test_app/enum/enum.dart';
 import 'package:flutter_test_app/mobile/mobile.dart';
 import 'package:flutter_test_app/state_management/get.dart';
-import 'package:flutter_test_app/tablet/tablet.dart';
+import 'package:flutter_test_app/state_management/state_instance.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -21,14 +22,22 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Exam',
       home: LayoutBuilder(
         builder: (context, constraints) {
-          double screenWidth = constraints.maxWidth;
-          //414 iphone XR
-          if (screenWidth <= 414) {
-            return const MobileScreen();
-          } else if (screenWidth <= 768 && screenWidth > 414) {
-            return const TabletScreen();
+          EnumClassFunction.checkEnumPlatForm(constraints);
+
+          switch (kUiStateInstance.kPlatformType.value) {
+            case PlatformType.mobile:
+              return const MobileScreen(); // use MobileScreen if available
+            // TODO: Handle this case.
+            case PlatformType.tablet:
+              return const DesktopScreen(); // use TabletScreen if available
+
+            // TODO: Handle this case.
+            case PlatformType.desktop:
+            default:
+              return const DesktopScreen();
+
+            // TODO: Handle this case.
           }
-          return const DesktopScreen();
         },
       ),
     );
