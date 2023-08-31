@@ -108,6 +108,7 @@ class HomeScreenWidget extends StatelessWidget {
                     ),
                   ).marginOnly(left: context.percentWidth * 22),
                   ElevatedWidgetButton(
+                      kOnPress: () {},
                       kName: "SHOP",
                       kAlignment: Alignment.bottomCenter,
                       kFontSize: 24,

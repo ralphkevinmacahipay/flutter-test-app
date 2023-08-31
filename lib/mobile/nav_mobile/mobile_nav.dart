@@ -30,8 +30,10 @@ class MobileNavBar extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: Image.asset(
+              width: context.percentWidth * 9,
+              height: context.percentWidth * 9,
               kMenuBar,
-            ).marginAll(context.percentWidth * 4),
+            ).marginOnly(left: context.percentWidth * 6.66),
           ),
           Align(
             alignment: Alignment.center,
@@ -46,22 +48,57 @@ class MobileNavBar extends StatelessWidget {
             ).marginAll(context.percentWidth * 1),
           ),
           Align(
-            alignment: Alignment.bottomRight,
-            child: Image.asset(
-              kFavIcon,
-            ).marginAll(context.percentWidth * 3),
-          ),
-          Align(
             alignment: Alignment.centerRight,
             child: Stack(
               children: [
-                Image.asset(
-                  kChartIcon,
-                ).marginAll(context.percentWidth * 3),
-                const Align(alignment: Alignment.bottomRight, child: Text("0")),
+                Align(
+                    alignment: Alignment.centerRight,
+                    child: Image.asset(
+                      width: context.percentWidth * 9,
+                      height: context.percentWidth * 9,
+                      kChartIcon,
+                    )),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: SizedBox(
+                    width: context.percentWidth * 5,
+                    child: FittedBox(
+                      child: CircleAvatar(
+                        backgroundColor: kBackGroundColor,
+                        radius: context.percentWidth * 2,
+                        child: FittedBox(
+                            child: Text(
+                          "0",
+                          style: kInterSemiBold.copyWith(
+                              color: kBlack.withOpacity(.47)),
+                        )),
+                      ),
+                    ),
+                  ),
+                ).marginOnly(
+                  bottom: context.percentHeight * 1,
+                )
               ],
             ),
-          ).marginOnly(right: context.percentWidth * 14.94)
+          ).marginOnly(right: context.percentWidth * 14.94),
+          Align(
+              alignment: Alignment.centerRight,
+              child: Image.asset(
+                width: context.percentWidth * 9,
+                height: context.percentWidth * 9,
+                kFavIcon,
+              )).marginOnly(right: context.percentWidth * 3.73),
+
+          // Align(
+          //   alignment: Alignment.centerRight,
+          //   child: Stack(
+          //     children: [
+          //       Image.asset(
+          //         kChartIcon,
+          //       ).marginAll(context.percentWidth * 3),
+          //     ],
+          //   ),
+          // ).marginOnly(right: context.percentWidth * 14.94)
         ],
       ),
     );
