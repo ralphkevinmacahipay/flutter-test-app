@@ -7,3 +7,5 @@ String kJacketImage = "assets/jacket_image.png";
 String kHoodyPerson = "assets/hoody_person.png";
 String kBackGroundMobile = "background_mobile.png";
 String kMenuBar = "assets/menu_bar.png";
+String kSampleJacket = "assets/sample_jacket.png";
+String kSamplePerson = "assets/sample_jacket_person.png";

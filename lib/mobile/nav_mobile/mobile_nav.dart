@@ -88,79 +88,8 @@ class MobileNavBar extends StatelessWidget {
                 height: context.percentWidth * 9,
                 kFavIcon,
               )).marginOnly(right: context.percentWidth * 3.73),
-
-          // Align(
-          //   alignment: Alignment.centerRight,
-          //   child: Stack(
-          //     children: [
-          //       Image.asset(
-          //         kChartIcon,
-          //       ).marginAll(context.percentWidth * 3),
-          //     ],
-          //   ),
-          // ).marginOnly(right: context.percentWidth * 14.94)
         ],
       ),
     );
   }
 }
-/**
- 
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Stack(
-              children: [
-                IconButton(
-                    onPressed: () {},
-                    icon: Image.asset(
-                      kChartIcon,
-                      fit: BoxFit.contain,
-                    )).p(context.percentWidth * 1),
-                Align(
-                  alignment: Alignment.bottomLeft,
-                  child: CircleAvatar(
-                          radius: context.percentWidth * 2.2,
-                          backgroundColor: kLogoBackColor,
-                          child: Text(
-                            "0",
-                            style: kInterMediumBold.copyWith(color: kBlack),
-                          ))
-                      .paddingOnly(
-                          left: context.percentWidth * 8,
-                          bottom: context.percentHeight * 1),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        kFavIcon,
-                        fit: BoxFit.contain,
-                      )).p(context.percentWidth * 1),
-                ),
-              ],
-            ),
-          ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: IconButton(
-                onPressed: () {},
-                icon: Image.asset(
-                  kMenuBar,
-                  fit: BoxFit.contain,
-                )).p(context.percentWidth * 1),
-          ),
-          Align(
-            alignment: Alignment.center,
-            child: CircleAvatar(
-              radius: context.percentWidth * 7,
-              backgroundColor: kLogoBackColor,
-              child: FittedBox(
-                child: Text(
-                  "LOGO",
-                  style: kInterRegurlar.copyWith(color: kBlack),
-                ).p(5),
-              ),
-            ),
-          )
- */

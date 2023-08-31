@@ -52,7 +52,7 @@ class MobileScreen extends StatelessWidget {
                       right: context.percentWidth * 3.73,
                       bottom: context.percentHeight * 6.40),
                   ElevatedWidgetButton(
-                      kOnPress: () {},
+                      kOnPress: () => shop(),
                       kName: "SHOP",
                       kAlignment: Alignment.center,
                       kFontSize: 24,
@@ -86,4 +86,8 @@ class MobileScreen extends StatelessWidget {
       ),
     ));
   }
+}
+
+void shop() {
+  print("test");
 }

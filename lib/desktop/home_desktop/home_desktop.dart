@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/configuration/constant_var.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/desktop/home_desktop/nav_bar_item.dart';
@@ -21,22 +22,73 @@ class DesktopScreen extends StatelessWidget {
               children: [
                 const HomeScreenWidget(),
                 Container(
-                  color: kGrey,
-                  height: context.height,
-                  width: context.width,
-                  child: const Center(child: Text("Products")),
-                ),
+                    color: kBackGroundColor,
+                    height: context.height,
+                    width: double.infinity,
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: SizedBox(
+                            width: double.infinity,
+                            height: context.percentHeight * 58.59,
+                            child: Stack(children: [
+                              Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Image.asset(
+                                    kSampleJacket,
+                                    width: context.percentWidth * 28.43,
+                                    height: context.percentHeight * 58.59,
+                                  )),
+                              Align(
+                                  alignment: Alignment.center,
+                                  child: Image.asset(
+                                    width: context.percentWidth * 28.43,
+                                    height: context.percentHeight * 58.59,
+                                    kSamplePerson,
+                                  )),
+                              Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Image.asset(
+                                    width: context.percentWidth * 28.43,
+                                    height: context.percentHeight * 58.59,
+                                    kSampleJacket,
+                                  )),
+                            ]),
+                          ),
+                        )
+                            .marginOnly(top: context.percentHeight * 15)
+                            .paddingSymmetric(
+                                horizontal: context.percentWidth * 4.58),
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Text(
+                            kLorem,
+                            style: kInterMediumBold.copyWith(),
+                            textAlign: TextAlign.center,
+                          ),
+                        )
+                            .marginSymmetric(
+                                horizontal: context.percentWidth * 20.52)
+                            .marginOnly(bottom: context.percentHeight * 7.51)
+                        // .paddingSymmetric(
+                        //     vertical: context.percentHeight * 5)
+                      ],
+                    )),
                 Container(
                   color: kLignRed,
                   height: context.height,
                   width: context.width,
-                  child: const Center(child: Text("Sale")),
+                  child: const Text('Sale'),
                 ),
                 Container(
                   color: kLigthBrown,
                   height: context.height,
                   width: context.width,
-                  child: const Center(child: Text("Contacts")),
+                  child: const Center(
+                      child: Text(
+                    "Contacts",
+                  )),
                 ),
               ],
             ),

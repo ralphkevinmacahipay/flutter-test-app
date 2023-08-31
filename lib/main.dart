@@ -4,7 +4,6 @@ import 'package:flutter_test_app/enum/enum.dart';
 import 'package:flutter_test_app/mobile/mobile.dart';
 import 'package:flutter_test_app/state_management/get.dart';
 import 'package:flutter_test_app/state_management/state_instance.dart';
-import 'package:flutter_test_app/tablet/tablet.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -27,10 +26,10 @@ class MyApp extends StatelessWidget {
 
           switch (kUiStateInstance.kPlatformType.value) {
             case PlatformType.mobile:
-              return const MobileScreen();
+              return const MobileScreen(); // use MobileScreen if available
             // TODO: Handle this case.
             case PlatformType.tablet:
-              return const TabletScreen();
+              return const DesktopScreen(); // use TabletScreen if available
 
             // TODO: Handle this case.
             case PlatformType.desktop:
