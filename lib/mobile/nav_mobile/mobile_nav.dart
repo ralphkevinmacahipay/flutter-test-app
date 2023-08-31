@@ -53,9 +53,14 @@ class MobileNavBar extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.centerRight,
-            child: Image.asset(
-              kChartIcon,
-            ).marginAll(context.percentWidth * 3),
+            child: Stack(
+              children: [
+                Image.asset(
+                  kChartIcon,
+                ).marginAll(context.percentWidth * 3),
+                const Align(alignment: Alignment.bottomRight, child: Text("0")),
+              ],
+            ),
           ).marginOnly(right: context.percentWidth * 14.94)
         ],
       ),
