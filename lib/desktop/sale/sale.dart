@@ -53,7 +53,7 @@ class SalesDesktopScreen extends StatelessWidget {
                         (kItem) => Text(
                           kItem,
                           style: kInterSemiBold.copyWith(
-                              fontSize: context.percentWidth * 3.47,
+                              fontSize: context.percentWidth * 3,
                               color: kLignRed),
                         ),
                       )
@@ -73,39 +73,38 @@ class SalesDesktopScreen extends StatelessWidget {
                   crossAxisSpacing: context.percentWidth * 4.65,
                   crossAxisCount: 4,
                 ),
-                itemBuilder: (context, index) => Container(
-                  decoration: const BoxDecoration(
-                      // color: kLignRed,
-                      ),
-                  child: Stack(children: [
-                    Align(
-                        alignment: Alignment.topCenter,
-                        child: Image.asset(kProdSaleList[index]['image'])),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                          padding: const EdgeInsets.all(10),
-                          decoration: const BoxDecoration(
-                            color: kLigthBrown,
-                          ),
-                          child: Text(
-                            "15% OFF",
-                            style: kInterMediumBold.copyWith(color: kWhite),
-                          )).marginOnly(top: context.percentHeight * 2),
+                itemBuilder: (context, index) => Stack(children: [
+                  Align(
+                      alignment: Alignment.topCenter,
+                      child: Image.asset(
+                        kProdSaleList[index]['image'],
+                        height: context.percentWidth * 27.77,
+                        width: context.percentWidth * 18.95,
+                      )).marginAll(15),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: const BoxDecoration(
+                          color: kLigthBrown,
+                        ),
+                        child: Text(
+                          "15% OFF",
+                          style: kInterMediumBold.copyWith(color: kWhite),
+                        )).marginOnly(top: context.percentHeight * 8),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: ListTile(
+                      titleTextStyle: kInterSemiBold.copyWith(
+                          fontSize: context.percentWidth * 1.25),
+                      subtitleTextStyle: kInterRegurlar.copyWith(
+                          fontSize: context.percentWidth * 1.25),
+                      title: const Text("LOREM IPSUM"),
+                      subtitle: const Text("Lorem ipsum"),
                     ),
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: ListTile(
-                        titleTextStyle: kInterSemiBold.copyWith(
-                            fontSize: context.percentWidth * 1.25),
-                        subtitleTextStyle: kInterRegurlar.copyWith(
-                            fontSize: context.percentWidth * 1.25),
-                        title: const Text("LOREM IPSUM"),
-                        subtitle: const Text("Lorem ipsum"),
-                      ),
-                    )
-                  ]),
-                ),
+                  )
+                ]),
               ),
             )),
         Align(
@@ -134,49 +133,3 @@ class SalesDesktopScreen extends StatelessWidget {
     );
   }
 }
-
-
-/**
- * 
-                  Text(
-                    "Sale",
-                    style: kInterMediumBold.copyWith(
-                        fontSize: context.percentWidth * 3.47, color: kWhite),
-                  ),
-                  SizedBox(
-                    width: context.percentWidth * 6.458,
-                  ),
-                  Text(
-                    "Sale",
-                    style: kInterMediumBold.copyWith(
-                        fontSize: context.percentWidth * 3.47, color: kWhite),
-                  ),
-                  SizedBox(
-                    width: context.percentWidth * 6.458,
-                  ),
-                  Text(
-                    "Sale",
-                    style: kInterMediumBold.copyWith(
-                        fontSize: context.percentWidth * 3.47, color: kWhite),
-                  ),
-                  SizedBox(
-                    width: context.percentWidth * 6.458,
-                  ),
-                  Text(
-                    "Sale",
-                    style: kInterMediumBold.copyWith(
-                        fontSize: context.percentWidth * 3.47, color: kWhite),
-                  ),
-                  SizedBox(
-                    width: context.percentWidth * 6.458,
-                  ),
-
- */
-
-
-  //  return Container(
-  //               color: Colors.blue,
-  //               child: Center(
-  //                 child: Text('Item $index'),
-  //               ),
-  //             );
