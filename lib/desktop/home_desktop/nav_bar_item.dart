@@ -49,23 +49,26 @@ class NavBar extends StatelessWidget {
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "HOME",
-                      kOnPress: () => kUiStateInstance.homeFuntion(context), //
+                      kOnPress: () =>
+                          kUiStateInstance.homeFuntion(context), // home
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "NEW ARRIVAL",
-                      kOnPress: () =>
-                          kUiStateInstance.newArrivalFunction(context),
+                      kOnPress: () => kUiStateInstance
+                          .newArrivalFunction(context), // product for now
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "SHOP",
-                      kOnPress: () => kUiStateInstance.shopFunction(context),
+                      kOnPress: () => kUiStateInstance
+                          .shopFunction(context), // sales for now
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "LAST COLLECTION",
-                      kOnPress: kUiStateInstance.lastColFunction,
+                      kOnPress: () => kUiStateInstance
+                          .lastColFunction(context), // contact for now
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
+import 'package:flutter_test_app/desktop/contact/contact.dart';
 import 'package:flutter_test_app/desktop/home_desktop/nav_bar_item.dart';
 import 'package:flutter_test_app/desktop/products/products.dart';
 import 'package:flutter_test_app/desktop/sale/sale.dart';
@@ -20,19 +21,11 @@ class DesktopScreen extends StatelessWidget {
           SizedBox(
             child: ListView(
               controller: kUiStateInstance.kListScrollController,
-              children: [
-                const HomeDesktopScreen(),
-                const ProductDesktopScreen(),
-                const SalesDesktopScreen(),
-                Container(
-                  color: kLigthBrown,
-                  height: context.height,
-                  width: context.width,
-                  child: const Center(
-                      child: Text(
-                    "Contacts",
-                  )),
-                ),
+              children: const [
+                HomeDesktopScreen(),
+                ProductDesktopScreen(),
+                SalesDesktopScreen(),
+                ContactDesktopScreen(),
               ],
             ),
           ),

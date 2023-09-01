@@ -36,7 +36,10 @@ class UiStateController extends GetxController {
     scrollToPosition(context.percentHeight * 200);
   }
 
-  void lastColFunction() {}
+  void lastColFunction(BuildContext context) {
+    scrollToPosition(context.percentHeight * 250);
+  }
+
   void menFunction() {}
   void womenFunction() {}
   void chartFunction() {}
