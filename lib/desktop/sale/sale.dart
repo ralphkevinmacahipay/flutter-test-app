@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
+import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -33,52 +34,54 @@ class SalesDesktopScreen extends StatelessWidget {
       height: context.height,
       width: context.width,
       child: Stack(children: [
-        Container(
-            height: context.percentHeight * 8.51,
-            decoration: BoxDecoration(color: kWhite, boxShadow: [
-              BoxShadow(
-                color: kBlack.withOpacity(.25),
-                offset: const Offset(0, 4),
-                blurRadius: 4,
-              ),
-            ]),
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: kHeaderSale
-                    .map(
-                      (kItem) => Text(
-                        kItem,
-                        style: kInterSemiBold.copyWith(
-                            fontSize: context.percentWidth * 3.47,
-                            color: kLignRed),
-                      ),
-                    )
-                    .toList())),
         Align(
-          alignment: Alignment.center,
+          alignment: Alignment.topCenter,
           child: Container(
-            color: kWhite,
-            height: context.percentHeight * 86,
-            child: GridView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 73),
-              itemCount: kProdSaleList.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: .5 / .5,
-                mainAxisSpacing: 15,
-                crossAxisSpacing: context.percentWidth * 4.65,
-                crossAxisCount: 4,
-              ),
-              itemBuilder: (context, index) => Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      kProdSaleList[index]['image'],
-                    ),
-                  ),
+              height: context.percentHeight * 8.51,
+              decoration: BoxDecoration(color: kWhite, boxShadow: [
+                BoxShadow(
+                  color: kBlack.withOpacity(.25),
+                  offset: const Offset(0, 4),
+                  blurRadius: 4,
                 ),
-                child: Stack(children: [
-                  Align(
+              ]),
+              child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: kHeaderSale
+                      .map(
+                        (kItem) => Text(
+                          kItem,
+                          style: kInterSemiBold.copyWith(
+                              fontSize: context.percentWidth * 3.47,
+                              color: kLignRed),
+                        ),
+                      )
+                      .toList())),
+        ),
+        Align(
+            alignment: Alignment.center,
+            child: Container(
+              color: kWhite,
+              height: context.percentHeight * 75.349,
+              child: GridView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 73),
+                itemCount: kProdSaleList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: .45 / .75, // w:h
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: context.percentWidth * 4.65,
+                  crossAxisCount: 4,
+                ),
+                itemBuilder: (context, index) => Container(
+                  decoration: const BoxDecoration(
+                      // color: kLignRed,
+                      ),
+                  child: Stack(children: [
+                    Align(
+                        alignment: Alignment.topCenter,
+                        child: Image.asset(kProdSaleList[index]['image'])),
+                    Align(
                       alignment: Alignment.topRight,
                       child: Container(
                           padding: const EdgeInsets.all(10),
@@ -88,12 +91,45 @@ class SalesDesktopScreen extends StatelessWidget {
                           child: Text(
                             "15% OFF",
                             style: kInterMediumBold.copyWith(color: kWhite),
-                          )).marginOnly(top: context.percentHeight * 2))
-                ]),
+                          )).marginOnly(top: context.percentHeight * 2),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: ListTile(
+                        titleTextStyle: kInterSemiBold.copyWith(
+                            fontSize: context.percentWidth * 1.25),
+                        subtitleTextStyle: kInterRegurlar.copyWith(
+                            fontSize: context.percentWidth * 1.25),
+                        title: const Text("LOREM IPSUM"),
+                        subtitle: const Text("Lorem ipsum"),
+                      ),
+                    )
+                  ]),
+                ),
               ),
-            ),
-          ).marginOnly(top: context.percentHeight * 8),
-        ),
+            )),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: context.percentWidth * 15.13,
+            height: context.percentHeight * 3.95,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                  color: kBlack.withOpacity(.50),
+                  blurRadius: 1,
+                  offset: const Offset(0, 4),
+                  spreadRadius: .5)
+            ], borderRadius: BorderRadius.circular(30)),
+            child: ElevatedWidgetButton(
+                kOnPress: () {},
+                kName: "More",
+                kAlignment: Alignment.bottomCenter,
+                kFontSize: context.percentWidth * 1.66,
+                kH: context.percentHeight * 3.95,
+                kW: context.percentWidth * 15.13,
+                kColor: kWhite),
+          ),
+        ).marginOnly(bottom: context.percentHeight * 5),
       ]),
     );
   }
