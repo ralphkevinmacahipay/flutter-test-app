@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test_app/configuration/constant_var.dart';
@@ -34,7 +32,10 @@ class UiStateController extends GetxController {
     scrollToPosition(context.percentHeight * 100);
   }
 
-  void shopFunction() {}
+  void shopFunction(BuildContext context) {
+    scrollToPosition(context.percentHeight * 200);
+  }
+
   void lastColFunction() {}
   void menFunction() {}
   void womenFunction() {}

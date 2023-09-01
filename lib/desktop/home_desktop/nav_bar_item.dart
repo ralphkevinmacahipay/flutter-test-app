@@ -60,7 +60,7 @@ class NavBar extends StatelessWidget {
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
                       kTitle: "SHOP",
-                      kOnPress: kUiStateInstance.shopFunction,
+                      kOnPress: () => kUiStateInstance.shopFunction(context),
                     ),
                     MyWidgetTextButton(
                       kStyle: kInterRegurlar,
