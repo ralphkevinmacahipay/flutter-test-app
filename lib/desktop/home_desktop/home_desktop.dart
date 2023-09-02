@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
-import 'package:flutter_test_app/desktop/contact/contact.dart';
+import 'package:flutter_test_app/desktop/contact_screen/contact.dart';
 import 'package:flutter_test_app/desktop/home_desktop/nav_bar_item.dart';
 import 'package:flutter_test_app/desktop/products/products.dart';
 import 'package:flutter_test_app/desktop/sale/sale.dart';
@@ -15,6 +15,11 @@ class DesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const homeDesktopScreen = HomeDesktopScreen();
+    const productDesktopScreen = ProductDesktopScreen();
+    const salesDesktopScreen = SalesDesktopScreen();
+    const contactDesktopScreen = ContactDesktopScreen();
+    print("build");
     return Scaffold(
       body: Stack(
         children: [
@@ -22,10 +27,10 @@ class DesktopScreen extends StatelessWidget {
             child: ListView(
               controller: kUiStateInstance.kListScrollController,
               children: const [
-                HomeDesktopScreen(),
-                ProductDesktopScreen(),
-                SalesDesktopScreen(),
-                ContactDesktopScreen(),
+                homeDesktopScreen,
+                productDesktopScreen,
+                salesDesktopScreen,
+                contactDesktopScreen,
               ],
             ),
           ),
@@ -53,6 +58,7 @@ class HomeDesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("HomeDesktopScreen");
     return Container(
       height: context.height,
       width: context.width,

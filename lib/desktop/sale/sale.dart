@@ -109,25 +109,14 @@ class SalesDesktopScreen extends StatelessWidget {
             )),
         Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
-            width: context.percentWidth * 15.13,
-            height: context.percentHeight * 3.95,
-            decoration: BoxDecoration(boxShadow: [
-              BoxShadow(
-                  color: kBlack.withOpacity(.50),
-                  blurRadius: 1,
-                  offset: const Offset(0, 4),
-                  spreadRadius: .5)
-            ], borderRadius: BorderRadius.circular(30)),
-            child: ElevatedWidgetButton(
-                kOnPress: () {},
-                kName: "More",
-                kAlignment: Alignment.bottomCenter,
-                kFontSize: context.percentWidth * 1.66,
-                kH: context.percentHeight * 3.95,
-                kW: context.percentWidth * 15.13,
-                kColor: kWhite),
-          ),
+          child: ElevatedWidgetButton(
+              kOnPress: () {},
+              kName: "More",
+              kAlignment: Alignment.bottomCenter,
+              kFontSize: context.percentWidth * 1.66,
+              kH: context.percentHeight * 3.95,
+              kW: context.percentWidth * 15.13,
+              kColor: kWhite),
         ).marginOnly(bottom: context.percentHeight * 5),
       ]),
     );

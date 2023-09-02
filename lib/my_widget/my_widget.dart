@@ -55,7 +55,14 @@ class ElevatedWidgetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: kAlignment,
-      child: SizedBox(
+      child: Container(
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              color: kBlack.withOpacity(.50),
+              blurRadius: 1,
+              offset: const Offset(0, 4),
+              spreadRadius: .5)
+        ], borderRadius: BorderRadius.circular(30)),
         height: kH,
         width: kW,
         child: ElevatedButton(
