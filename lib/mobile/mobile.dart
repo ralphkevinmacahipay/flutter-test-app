@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/mobile/contact_mobile/contact_mobile.dart';
 import 'package:flutter_test_app/mobile/mobile_home/mobile_home.dart';
 import 'package:flutter_test_app/mobile/mobile_product/mobile_product.dart';
