@@ -50,12 +50,13 @@ class ProductDesktopScreen extends StatelessWidget {
                 alignment: Alignment.bottomCenter,
                 child: Text(
                   kLorem,
-                  style: kInterMediumBold.copyWith(),
+                  style: kInterMediumBold.copyWith(
+                      fontSize: context.percentWidth * 1.38),
                   textAlign: TextAlign.center,
                 ),
               )
                   .marginSymmetric(horizontal: context.percentWidth * 20.52)
-                  .marginOnly(bottom: context.percentHeight * 7.51)
+                  .marginOnly(bottom: context.percentHeight * 5.51)
               // .paddingSymmetric(
               //     vertical: context.percentHeight * 5)
             ],
