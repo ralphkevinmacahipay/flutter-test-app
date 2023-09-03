@@ -83,6 +83,9 @@ class ContactMobileWidget extends StatelessWidget {
                   fontSize: context.percentWidth * 4.8),
             ),
           ),
+          SizedBox(
+            height: context.percentHeight * 1.60,
+          ),
           InkWell(
             onTap: () {},
             child: Text(
@@ -91,6 +94,10 @@ class ContactMobileWidget extends StatelessWidget {
                   fontSize: context.percentWidth * 4.8),
             ),
           ),
+          SizedBox(
+            height: context.percentHeight * 1.60,
+          ),
+
           InkWell(
             onTap: () {},
             child: Text(

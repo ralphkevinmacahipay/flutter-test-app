@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_app/desktop/home_desktop/home_desktop.dart';
 import 'package:flutter_test_app/enum/enum.dart';
 import 'package:flutter_test_app/mobile/mobile.dart';
-import 'package:flutter_test_app/mobile/mobile_product/mobile_product.dart';
 import 'package:flutter_test_app/state_management/get.dart';
 import 'package:flutter_test_app/state_management/state_instance.dart';
 import 'package:get/get.dart';

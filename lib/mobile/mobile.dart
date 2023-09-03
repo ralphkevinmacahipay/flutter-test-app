@@ -18,13 +18,18 @@ class MobileScreen extends StatelessWidget {
         body: SafeArea(
       child: Stack(
         children: [
-          ListView(
-            children: const [
-              HomeMobileWidget(),
-              ProductMobileWidget(),
-              MobileSaleWidget(),
-              ContactMobileWidget(),
-            ],
+          Scrollbar(
+            thumbVisibility: true,
+            trackVisibility: true,
+            interactive: true,
+            child: ListView(
+              children: const [
+                HomeMobileWidget(),
+                ProductMobileWidget(),
+                MobileSaleWidget(),
+                ContactMobileWidget(),
+              ],
+            ),
           ),
           const MobileNavBar().marginOnly(top: context.percentHeight * 2.34)
         ],
