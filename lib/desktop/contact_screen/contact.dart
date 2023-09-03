@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/configuration/constant_var.dart';
+import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -13,7 +15,7 @@ class ContactDesktopScreen extends StatelessWidget {
     print("re building");
     return Container(
       color: kBackGroundColor,
-      height: context.percentHeight * 44.9,
+      height: context.percentHeight * 50,
       width: context.width,
       child: Row(
         children: [
@@ -22,40 +24,71 @@ class ContactDesktopScreen extends StatelessWidget {
               child: Container(
                 color: kBackGroundColor,
                 child: Stack(children: [
-                  // TODO: OVERFLOW ANG MGA LISTTILE
                   Align(
                     alignment: Alignment.center,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          radius: context.percentWidth * 3,
+                          radius: context.percentHeight * 6.34,
                           backgroundColor: kLogoBackColor,
                           child: FittedBox(
                               child: const Text("LOGO")
-                                  .p(context.percentWidth * 1)),
+                                  .p(context.percentHeight * 2.53)),
                         ).marginOnly(
                             top: context.percentHeight * 2.53,
                             left: context.percentWidth * 4.027),
+                        SizedBox(
+                          height: context.percentHeight * 4.199,
+                        ),
                         const ListTileWidget(
                           kTitle:
                               "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                           kIcon: Icons.send,
                         ).marginOnly(
-                            top: context.percentHeight * 1.53,
+                            // top: context.percentHeight * 1.53,
                             left: context.percentWidth * 4.027),
                         const ListTileWidget(
                           kTitle: "Lorem ipsum",
                           kIcon: Icons.phone_android_outlined,
                         ).marginOnly(
-                            top: context.percentHeight * 1.53,
+                            // top: context.percentHeight * 1.53,
                             left: context.percentWidth * 4.027),
                         const ListTileWidget(
                           kTitle: "Lorem ipsum dolor sit amet",
                           kIcon: Icons.email_outlined,
                         ).marginOnly(
-                            top: context.percentHeight * 1.53,
+                            // top: context.percentHeight * 1.53,
                             left: context.percentWidth * 4.027),
+                        Row(
+                          children: kContactIcon
+                              .map((kIcon) => CircleAvatar(
+                                    backgroundColor: kIconColor,
+                                    radius: context.percentWidth * 1.4583,
+                                    child: Image.asset(
+                                      kIcon['icon_image'],
+                                      width: context.percentWidth * 1.59,
+                                      height: context.percentWidth * 1.59,
+                                    ),
+                                  ).marginOnly(
+                                      right: context.percentWidth * 0.90))
+                              .toList(),
+                        ).marginOnly(left: context.percentWidth * 7.63)
+/**
+ *   CircleAvatar(
+                              backgroundColor: kIconColor,
+                              radius: context.percentWidth * 1.4583,
+                              child: Image.asset(
+                                kFB,
+                                width: context.percentWidth * 1.59,
+                                height: context.percentWidth * 1.59,
+                              ),
+                            )
+ */
+                        //
+
+// kPinterest
+// kInsta
                       ],
                     ),
                   ),

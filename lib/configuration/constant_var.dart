@@ -20,3 +20,9 @@ List<Map<String, dynamic>> kProdSaleList = [
   {"image": kSampleJacket},
   {"image": kSampleJacket},
 ];
+
+List<Map<String, dynamic>> kContactIcon = [
+  {"icon_image": kFB},
+  {"icon_image": kPinterest},
+  {"icon_image": kInsta},
+];

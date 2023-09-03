@@ -10,6 +10,7 @@ const Color kGrey = Color(0xffE4E4E4);
 const Color kLignRed = Color(0xffCF4242);
 const Color kLigthBrown = Color(0xffE0CA9E);
 const Color kTextColor = Color(0xff676767);
+const Color kIconColor = Color(0xff6E6E6E);
 
 const double kBorderRadius = 10;
 
