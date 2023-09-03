@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/configuration/icons.dart';
+import 'package:flutter_test_app/configuration/constant_var.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:get/get.dart';
@@ -13,22 +13,6 @@ class SalesDesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> kHeaderSale = [
-      "SALE",
-      "SALE",
-      "SALE",
-      "SALE",
-    ];
-    List<Map<String, dynamic>> kProdSaleList = [
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-      {"image": kSampleJacket},
-    ];
     return Container(
       color: kWhite,
       height: context.height,

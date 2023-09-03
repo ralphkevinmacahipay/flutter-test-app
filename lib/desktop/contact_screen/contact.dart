@@ -35,31 +35,27 @@ class ContactDesktopScreen extends StatelessWidget {
                               child: const Text("LOGO")
                                   .p(context.percentWidth * 1)),
                         ).marginOnly(
-                            top: context.percentHeight * 3.61,
+                            top: context.percentHeight * 2.53,
                             left: context.percentWidth * 4.027),
-                        ListTile(
-                          minLeadingWidth: 0,
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(
-                              style: kInterMediumBold.copyWith(
-                                  fontSize: context.percentWidth * 1.0416),
-                              " Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
-                          leading: const Icon(Icons.send),
-                        ),
-                        ListTile(
-                          title: Text(
-                              style: kInterMediumBold.copyWith(
-                                  fontSize: context.percentWidth * 1.0416),
-                              " Lorem ipsum "),
-                          leading: const Icon(Icons.phone_android_outlined),
-                        ),
-                        ListTile(
-                          title: Text(
-                              style: kInterMediumBold.copyWith(
-                                  fontSize: context.percentWidth * 1.0416),
-                              " Lorem ipsum dolor sit amet"),
-                          leading: const Icon(Icons.email_outlined),
-                        )
+                        const ListTileWidget(
+                          kTitle:
+                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                          kIcon: Icons.send,
+                        ).marginOnly(
+                            top: context.percentHeight * 1.53,
+                            left: context.percentWidth * 4.027),
+                        const ListTileWidget(
+                          kTitle: "Lorem ipsum",
+                          kIcon: Icons.phone_android_outlined,
+                        ).marginOnly(
+                            top: context.percentHeight * 1.53,
+                            left: context.percentWidth * 4.027),
+                        const ListTileWidget(
+                          kTitle: "Lorem ipsum dolor sit amet",
+                          kIcon: Icons.email_outlined,
+                        ).marginOnly(
+                            top: context.percentHeight * 1.53,
+                            left: context.percentWidth * 4.027),
                       ],
                     ),
                   ),
@@ -157,5 +153,33 @@ class ContactDesktopScreen extends StatelessWidget {
   TextStyle _styleText(BuildContext context) {
     return kInterMediumBold.copyWith(
         color: kTextColor, fontSize: context.percentWidth * 1.25);
+  }
+}
+
+class ListTileWidget extends StatelessWidget {
+  final String
+      kTitle; //" Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  final IconData kIcon; //  Icons.send,
+
+  const ListTileWidget({
+    super.key,
+    required this.kTitle,
+    required this.kIcon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      minLeadingWidth: 0,
+      contentPadding: EdgeInsets.zero,
+      title: Text(
+          style: kInterMediumBold.copyWith(
+              fontSize: context.percentWidth * 1.0416),
+          kTitle),
+      leading: Icon(
+        kIcon,
+        size: context.percentWidth * 2.083,
+      ),
+    );
   }
 }
