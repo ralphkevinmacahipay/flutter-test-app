@@ -78,20 +78,22 @@ class SalesDesktopScreen extends StatelessWidget {
                       alignment: Alignment.topCenter,
                       child: Image.asset(
                         kProdSaleList[index]['image'],
-                        height: context.percentWidth * 27.77,
-                        width: context.percentWidth * 18.95,
                       )).marginAll(15),
                   Align(
                     alignment: Alignment.topRight,
                     child: Container(
-                        padding: const EdgeInsets.all(10),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: context.percentWidth * 0.55,
+                            vertical: context.percentWidth * 0.69),
                         decoration: const BoxDecoration(
                           color: kLigthBrown,
                         ),
                         child: Text(
                           "15% OFF",
-                          style: kInterMediumBold.copyWith(color: kWhite),
-                        )).marginOnly(top: context.percentHeight * 8),
+                          style: kInterMediumBold.copyWith(
+                              color: kWhite,
+                              fontSize: context.percentWidth * 1.25),
+                        )).marginOnly(top: context.percentWidth * 2.013),
                   ),
                   Align(
                     alignment: Alignment.bottomCenter,
