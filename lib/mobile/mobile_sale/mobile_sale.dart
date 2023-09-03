@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
+import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -13,7 +14,7 @@ class MobileSaleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: kWhite,
-      height: context.percentHeight * 128.9408, // adjust if scroll is apply
+      height: context.percentHeight * 120, // adjust if scroll is apply
       width: context.width,
       child: ListView(
         children: [
@@ -32,7 +33,8 @@ class MobileSaleWidget extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: context.percentHeight * 126,
+            height:
+                context.percentHeight * 99.137, //context.percentHeight * 120,
             child: GridView.builder(
               itemCount: 6,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -88,7 +90,16 @@ class MobileSaleWidget extends StatelessWidget {
                     ],
                   )),
             ).paddingSymmetric(horizontal: context.percentWidth * 9.6),
-          )
+          ).paddingOnly(top: context.percentHeight * 6.650),
+          ElevatedWidgetButton(
+                  kOnPress: () {},
+                  kName: "More",
+                  kAlignment: Alignment.center,
+                  kFontSize: context.percentWidth * 4.8,
+                  kH: context.percentHeight * 3.94,
+                  kW: context.percentWidth * 33.0,
+                  kColor: kWhite)
+              .paddingOnly(bottom: context.percentHeight * 5),
         ],
       ),
     );
