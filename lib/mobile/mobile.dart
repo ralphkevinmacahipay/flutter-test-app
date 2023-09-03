@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/mobile/mobile_home/mobile_home.dart';
 import 'package:flutter_test_app/mobile/mobile_product/mobile_product.dart';
+import 'package:flutter_test_app/mobile/mobile_sale/mobile_sale.dart';
 import 'package:flutter_test_app/mobile/nav_mobile/mobile_nav.dart';
 
 import 'package:get/get.dart';
@@ -22,12 +23,7 @@ class MobileScreen extends StatelessWidget {
             children: [
               const HomeMobileWidget(),
               const ProductMobileWidget(),
-              Container(
-                color: kGrey,
-                height: context.height,
-                width: context.width,
-                child: const Center(child: Text("Sale")),
-              ),
+              const MobileSaleWidget(),
               Container(
                 color: kLigthBrown,
                 height: context.height,

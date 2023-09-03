@@ -47,7 +47,7 @@ class ProductMobileWidget extends StatelessWidget {
                     ).marginOnly(bottom: context.percentHeight * 6),
                   )
                   .toList())
-          .marginOnly(top: context.percentHeight * 6.5270),
+          .marginOnly(top: context.percentHeight * 6),
     );
   }
 }
