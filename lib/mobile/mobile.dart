@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_test_app/configuration/style.dart';
+import 'package:flutter_test_app/mobile/contact_mobile/contact_mobile.dart';
 import 'package:flutter_test_app/mobile/mobile_home/mobile_home.dart';
 import 'package:flutter_test_app/mobile/mobile_product/mobile_product.dart';
 import 'package:flutter_test_app/mobile/mobile_sale/mobile_sale.dart';
@@ -20,16 +21,11 @@ class MobileScreen extends StatelessWidget {
       child: Stack(
         children: [
           ListView(
-            children: [
-              const HomeMobileWidget(),
-              const ProductMobileWidget(),
-              const MobileSaleWidget(),
-              Container(
-                color: kLigthBrown,
-                height: context.height,
-                width: context.width,
-                child: const Center(child: Text("Contact")),
-              ),
+            children: const [
+              HomeMobileWidget(),
+              ProductMobileWidget(),
+              MobileSaleWidget(),
+              ContactMobileWidget(),
             ],
           ),
           const MobileNavBar().marginOnly(top: context.percentHeight * 2.34)

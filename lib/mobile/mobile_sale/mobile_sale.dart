@@ -16,9 +16,10 @@ class MobileSaleWidget extends StatelessWidget {
       color: kWhite,
       height: context.percentHeight * 120, // adjust if scroll is apply
       width: context.width,
-      child: ListView(
+      child: Column(
         children: [
           Container(
+            width: double.infinity,
             decoration: BoxDecoration(color: kWhite, boxShadow: [
               BoxShadow(
                   color: kBlack.withOpacity(.25),
@@ -36,6 +37,7 @@ class MobileSaleWidget extends StatelessWidget {
             height:
                 context.percentHeight * 99.137, //context.percentHeight * 120,
             child: GridView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 6,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   mainAxisSpacing: context.percentHeight * 2.95,

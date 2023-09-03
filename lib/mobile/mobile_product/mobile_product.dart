@@ -16,7 +16,7 @@ class ProductMobileWidget extends StatelessWidget {
       color: kBackGroundColor,
       height: context.percentHeight * 134.97,
       width: context.width,
-      child: ListView(
+      child: Column(
               children: kMobilePro
                   .map(
                     (kProdItem) => SizedBox(

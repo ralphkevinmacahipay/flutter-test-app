@@ -61,33 +61,21 @@ class ContactDesktopScreen extends StatelessWidget {
                             left: context.percentWidth * 4.027),
                         Row(
                           children: kContactIcon
-                              .map((kIcon) => CircleAvatar(
-                                    backgroundColor: kIconColor,
-                                    radius: context.percentWidth * 1.4583,
-                                    child: Image.asset(
-                                      kIcon['icon_image'],
-                                      width: context.percentWidth * 1.59,
-                                      height: context.percentWidth * 1.59,
-                                    ),
-                                  ).marginOnly(
-                                      right: context.percentWidth * 0.90))
+                              .map((kIcon) => InkWell(
+                                    onTap: () {},
+                                    child: CircleAvatar(
+                                      backgroundColor: kIconColor,
+                                      radius: context.percentWidth * 1.4583,
+                                      child: Image.asset(
+                                        kIcon['icon_image'],
+                                        width: context.percentWidth * 1.59,
+                                        height: context.percentWidth * 1.59,
+                                      ),
+                                    ).marginOnly(
+                                        right: context.percentWidth * 0.90),
+                                  ))
                               .toList(),
                         ).marginOnly(left: context.percentWidth * 7.63)
-/**
- *   CircleAvatar(
-                              backgroundColor: kIconColor,
-                              radius: context.percentWidth * 1.4583,
-                              child: Image.asset(
-                                kFB,
-                                width: context.percentWidth * 1.59,
-                                height: context.percentWidth * 1.59,
-                              ),
-                            )
- */
-                        //
-
-// kPinterest
-// kInsta
                       ],
                     ),
                   ),
@@ -192,11 +180,15 @@ class ListTileWidget extends StatelessWidget {
   final String
       kTitle; //" Lorem ipsum dolor sit amet, consectetur adipiscing elit,\nsed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   final IconData kIcon; //  Icons.send,
+  final double? kIconSIze;
+  final double? kTextSize;
 
   const ListTileWidget({
     super.key,
     required this.kTitle,
     required this.kIcon,
+    this.kIconSIze,
+    this.kTextSize,
   });
 
   @override
@@ -206,11 +198,11 @@ class ListTileWidget extends StatelessWidget {
       contentPadding: EdgeInsets.zero,
       title: Text(
           style: kInterMediumBold.copyWith(
-              fontSize: context.percentWidth * 1.0416),
+              fontSize: kTextSize ?? context.percentWidth * 1.0416),
           kTitle),
       leading: Icon(
         kIcon,
-        size: context.percentWidth * 2.083,
+        size: kIconSIze ?? context.percentWidth * 2.083,
       ),
     );
   }
