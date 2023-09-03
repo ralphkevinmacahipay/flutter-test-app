@@ -26,3 +26,9 @@ List<Map<String, dynamic>> kContactIcon = [
   {"icon_image": kPinterest},
   {"icon_image": kInsta},
 ];
+
+List<Map<String, dynamic>> kMobilePro = [
+  {'prod_item': kSampleJacket, 'button_title': 'Sweatshirts'},
+  {'prod_item': kSampleJacket, 'button_title': 'Hoodies'},
+  {'prod_item': kSampleJacket, 'button_title': 'Pair'},
+];

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/constant_var.dart';
-import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';

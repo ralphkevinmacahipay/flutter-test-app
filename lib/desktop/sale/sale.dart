@@ -38,7 +38,7 @@ class SalesDesktopScreen extends StatelessWidget {
                           kItem,
                           style: kInterSemiBold.copyWith(
                               fontSize: context.percentWidth * 3,
-                              color: kLignRed),
+                              color: kLightRed),
                         ),
                       )
                       .toList())),
