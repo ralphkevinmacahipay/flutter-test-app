@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/constant_var.dart';
-import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
 import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:get/get.dart';
@@ -48,22 +47,7 @@ class ProductMobileWidget extends StatelessWidget {
                     ).marginOnly(bottom: context.percentHeight * 6),
                   )
                   .toList())
-          // .paddingSymmetric(
-          //   horizontal: context.percentWidth * 22.66,
-          //   // vertical: context.percentHeight * 6.52
-          // )
           .marginOnly(top: context.percentHeight * 6.5270),
     );
   }
 }
-
-/**
- *  
- *Image.asset(
-          kSampleJacket,
-          height: context.percentHeight * 36.945,
-        ).marginOnly(bottom: context.percentHeight * 3.9408),
- */
-
-
-

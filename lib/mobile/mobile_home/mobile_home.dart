@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/configuration/icons.dart';
 import 'package:flutter_test_app/configuration/style.dart';
-import 'package:flutter_test_app/mobile/mobile.dart';
 
 import 'package:flutter_test_app/my_widget/my_widget.dart';
 import 'package:get/get.dart';
